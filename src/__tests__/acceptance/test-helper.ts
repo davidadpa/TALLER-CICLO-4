@@ -1,4 +1,4 @@
-import {Grupo57} from '../..';
+import {TallerTicGr57} from '../..';
 import {
   createRestAppClient,
   givenHttpServerConfig,
@@ -14,7 +14,7 @@ export async function setupApplication(): Promise<AppWithClient> {
     // port: +process.env.PORT,
   });
 
-  const app = new Grupo57({
+  const app = new TallerTicGr57({
     rest: restConfig,
   });
 
@@ -27,6 +27,6 @@ export async function setupApplication(): Promise<AppWithClient> {
 }
 
 export interface AppWithClient {
-  app: Grupo57;
+  app: TallerTicGr57;
   client: Client;
 }

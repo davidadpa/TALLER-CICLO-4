@@ -2,10 +2,15 @@ import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
 import {juggler} from '@loopback/repository';
 
 const config = {
-  name: 'mongoDB',
-  connector: 'memory',
-  localStorage: 'mongodb+srv://admin:E6seonej97wyCi92@cluster0.xgqqari.mongodb.net/TALLERTICDB?retryWrites=true&w=majority',
-  file: ''
+  name: 'MongoDb',
+  connector: 'mongodb',
+  url: 'mongodb+srv://admin:E6seonej97wyCi92@cluster0.xgqqari.mongodb.net/TallerTic2022?retryWrites=true&w=majority',
+  host: '',
+  port: 0,
+  user: '',
+  password: '',
+  database: '',
+  useNewUrlParser: true
 };
 
 // Observe application's life cycle to disconnect the datasource when
@@ -15,11 +20,11 @@ const config = {
 @lifeCycleObserver('datasource')
 export class MongoDbDataSource extends juggler.DataSource
   implements LifeCycleObserver {
-  static dataSourceName = 'mongoDB';
+  static dataSourceName = 'MongoDb';
   static readonly defaultConfig = config;
 
   constructor(
-    @inject('datasources.config.mongoDB', {optional: true})
+    @inject('datasources.config.MongoDb', {optional: true})
     dsConfig: object = config,
   ) {
     super(dsConfig);

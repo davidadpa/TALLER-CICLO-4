@@ -1,10 +1,10 @@
-import {Grupo57} from './application';
+import {TallerTicGr57} from './application';
 
 export async function migrate(args: string[]) {
   const existingSchema = args.includes('--rebuild') ? 'drop' : 'alter';
   console.log('Migrating schemas (%s existing schema)', existingSchema);
 
-  const app = new Grupo57();
+  const app = new TallerTicGr57();
   await app.boot();
   await app.migrateSchema({existingSchema});
 

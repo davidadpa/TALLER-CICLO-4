@@ -1,5 +1,5 @@
 import {ApplicationConfig} from '@loopback/core';
-import {Grupo57} from './application';
+import {TallerTicGr57} from './application';
 
 /**
  * Export the OpenAPI spec from the application
@@ -12,7 +12,7 @@ async function exportOpenApiSpec(): Promise<void> {
     },
   };
   const outFile = process.argv[2] ?? '';
-  const app = new Grupo57(config);
+  const app = new TallerTicGr57(config);
   await app.boot();
   await app.exportOpenApiSpec(outFile);
 }

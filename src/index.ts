@@ -1,9 +1,9 @@
-import {ApplicationConfig, Grupo57} from './application';
+import {ApplicationConfig, TallerTicGr57} from './application';
 
 export * from './application';
 
 export async function main(options: ApplicationConfig = {}) {
-  const app = new Grupo57(options);
+  const app = new TallerTicGr57(options);
   await app.boot();
   await app.start();
 
